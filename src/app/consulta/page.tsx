@@ -232,7 +232,7 @@ export default function ConsultaForm() {
     const otrosResultados = evaluarCondicionesMigratorias();
 
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('DatabaseColomboPage') // El nombre de tu tabla
         .insert([
           {
@@ -265,8 +265,12 @@ export default function ConsultaForm() {
       if (error) {
         throw error;
       }
-    } catch (error: any) {
-      console.error('Error detallado de Supabase:', error.message || JSON.stringify(error));
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error('Error detallado de Supabase:', error.message);
+      } else {
+        console.error('Error de Supabase (tipo desconocido):', error);
+      }
     }
 
     // Construir el objeto de datos para el correo
