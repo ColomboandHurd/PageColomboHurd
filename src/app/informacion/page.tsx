@@ -10,7 +10,7 @@ export default function InformacionPage() {
       <section className="section" style={{ padding: 0, marginBottom: 0 }}>
         <div className="flex flex-col md:flex-row gap-0 shadow-lg overflow-hidden min-h-[400px] w-full">
           {/* Columna izquierda: Información H1B */}
-          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px]">
+          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px] order-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white animate-pulse" style={{ 
               background: 'linear-gradient(45deg, #ffffff, #fbbf24, #ffffff)',
               backgroundSize: '200% 200%',
@@ -27,7 +27,7 @@ export default function InformacionPage() {
             </p>
           </div>
           {/* Columna derecha: Video H1B */}
-          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px]">
+          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2">
             <div className="flex items-center justify-center w-full h-full">
               <video
                 src="/H1B.mp4"
@@ -43,7 +43,7 @@ export default function InformacionPage() {
         {/* Segunda fila: Visa H2B, información a la derecha */}
         <div className="flex flex-col md:flex-row gap-0 shadow-lg overflow-hidden min-h-[400px] w-full mt-16">
           {/* Columna izquierda: Video H2B */}
-          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px]">
+          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2 md:order-1">
             <div className="flex items-center justify-center w-full h-full">
               <video
                 src="/H2B.mp4"
@@ -55,7 +55,7 @@ export default function InformacionPage() {
             </div>
           </div>
           {/* Columna derecha: Información H2B */}
-          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px]">
+          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px] order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white animate-pulse" style={{ 
               background: 'linear-gradient(45deg, #ffffff, #fbbf24, #ffffff)',
               backgroundSize: '200% 200%',
@@ -76,7 +76,7 @@ export default function InformacionPage() {
         {/* Tercera fila: Visa EB2, información a la izquierda */}
         <div className="flex flex-col md:flex-row gap-0 shadow-lg overflow-hidden min-h-[400px] w-full mt-16">
           {/* Columna izquierda: Información EB2 */}
-          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px]">
+          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px] order-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white animate-pulse" style={{ 
               background: 'linear-gradient(45deg, #ffffff, #fbbf24, #ffffff)',
               backgroundSize: '200% 200%',
@@ -93,7 +93,7 @@ export default function InformacionPage() {
             </p>
           </div>
           {/* Columna derecha: Video EB2 */}
-          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px]">
+          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2">
             <div className="flex items-center justify-center w-full h-full">
               <video
                 src="/EB2.mp4"
@@ -109,7 +109,7 @@ export default function InformacionPage() {
         {/* Cuarta fila: Visa EB2-NIW, información a la derecha */}
         <div className="flex flex-col md:flex-row gap-0 shadow-lg overflow-hidden min-h-[400px] w-full mt-16">
           {/* Columna izquierda: Video EB2-NIW */}
-          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px]">
+          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2 md:order-1">
             <div className="flex items-center justify-center w-full h-full">
               <video
                 src="/EB2NIW.mp4"
@@ -121,7 +121,7 @@ export default function InformacionPage() {
             </div>
           </div>
           {/* Columna derecha: Información EB2-NIW */}
-          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px]">
+          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px] order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white animate-pulse" style={{ 
               background: 'linear-gradient(45deg, #ffffff, #fbbf24, #ffffff)',
               backgroundSize: '200% 200%',
@@ -142,7 +142,7 @@ export default function InformacionPage() {
         {/* Quinta fila: Visa EB3, información a la izquierda */}
         <div className="flex flex-col md:flex-row gap-0 shadow-lg overflow-hidden min-h-[400px] w-full mt-16">
           {/* Columna izquierda: Información EB3 */}
-          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px]">
+          <div className="flex-1 bg-[var(--azul-legal)] text-white p-10 md:p-20 flex flex-col justify-center min-h-[400px] order-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white animate-pulse" style={{
               background: 'linear-gradient(45deg, #ffffff, #fbbf24, #ffffff)',
               backgroundSize: '200% 200%',
@@ -159,7 +159,7 @@ export default function InformacionPage() {
             </p>
           </div>
           {/* Columna derecha: Video EB3 */}
-          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px]">
+          <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2">
             <div className="flex items-center justify-center w-full h-full">
               <video
                 src="/EB3.mp4"

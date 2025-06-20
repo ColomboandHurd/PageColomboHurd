@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import FooterContacto from '@/components/FooterContacto';
 
 export default function NoticiasPage() {
   // Crear un array de 20 elementos para los cuadros
@@ -96,14 +97,12 @@ export default function NoticiasPage() {
         </div>
         <div
           id="noticias-grid"
-          className="grid grid-cols-1 md:grid-cols-3 gap-[2cm] justify-center"
-          style={{ marginTop: '2cm' }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center justify-items-center mt-12"
         >
           {gridItems.map((num) => (
             <div
               key={num}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col items-stretch overflow-hidden border border-gray-200"
-              style={{ width: 340, height: 340 }}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col items-stretch overflow-hidden border border-gray-200 w-full max-w-xs h-[340px]"
             >
               {/* Imagen superior */}
               <div className="w-full" style={{ height: '70%', position: 'relative' }}>
@@ -146,6 +145,8 @@ export default function NoticiasPage() {
             </div>
           ))}
         </div>
+        <div className="mt-16 md:mt-20" />
+        <FooterContacto />
       </div>
     </main>
   );

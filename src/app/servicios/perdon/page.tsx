@@ -7,31 +7,22 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FooterContacto from '@/components/FooterContacto';
 
 export default function PerdonPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#f8fafc] to-[#e0e7ef] flex flex-col items-center pt-16 pb-10 px-2">
+      <div className="h-20" /> {/* Espaciador para el Navbar */}
       {/* Sección superior: título e imagen */}
-      <section className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 mb-20">
+      <section className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 mb-12 md:mb-20">
         {/* Título a la izquierda */}
-        <div className="flex-1 flex flex-col justify-center items-start md:items-start mt-8 md:mt-0">
-          <h1
-            className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6"
-            style={{
-              background: 'linear-gradient(90deg, #1a365d 20%, #b8860b 80%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              textShadow: '0 4px 24px rgba(26,54,93,0.10)',
-              fontFamily: 'Poppins, Inter, sans-serif',
-              letterSpacing: '-0.03em',
-              lineHeight: 1.1
-            }}
-          >
-            Perdón migratorio en Estados Unidos
+        <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left mt-8 md:mt-0">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1a365d] mb-6">
+            Perdón Migratorio en Estados Unidos
           </h1>
         </div>
         {/* Imagen a la derecha */}
-        <div className="flex-1 flex justify-center items-start" style={{ marginTop: '4cm' }}>
+        <div className="flex-1 flex justify-center items-start">
           <Image
             src="/perdon.png"
             alt="Perdón migratorio en Estados Unidos"
@@ -43,102 +34,74 @@ export default function PerdonPage() {
         </div>
       </section>
 
-      {/* Sección: Definición con transición desde la izquierda y bordes rectos, visual elegante */}
-      <section className="w-full max-w-5xl mx-auto mb-32">
+      {/* Sección: Definición */}
+      <section className="w-full max-w-5xl mx-auto pt-24">
         <div className="animate-fade-in-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--azul-legal)] mb-6 text-left md:text-center tracking-tight uppercase mt-24" style={{letterSpacing: '.04em'}}>Definición</h2>
-          <div className="p-10 shadow-[0_4px_32px_rgba(184,134,11,0.08)] border-l-4 border-[var(--dorado-elegante)] relative overflow-hidden" style={{borderRadius: 0, paddingLeft: '2.5rem', background: 'transparent'}}>
-            {/* Línea decorativa sutil */}
-            <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-[var(--dorado-elegante)] to-transparent opacity-70" style={{zIndex:1}} />
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed relative z-10">
-              El perdón migratorio (o waiver) es un recurso legal que permite a personas consideradas inadmisibles por las leyes migratorias de EE.UU. solicitar la eliminación o reducción de su prohibición de entrada o permanencia en el país. Es clave para quienes desean obtener una visa o la residencia permanente a pesar de antecedentes migratorios complicados.
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d] mb-6 text-center tracking-tight uppercase">Definición</h2>
+          <div className="p-8 md:p-10 shadow-lg border-l-4 border-[#b8860b] bg-white/50 rounded-r-lg">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              El perdón migratorio (o waiver) es un recurso legal que permite a personas consideradas inadmisibles solicitar la eliminación de su prohibición de entrada o permanencia en el país. Es clave para obtener una visa o residencia a pesar de antecedentes complicados.
             </p>
           </div>
         </div>
       </section>
 
       {/* Sección: ¿Quiénes pueden solicitarlo? */}
-      <section className="w-full max-w-5xl mx-auto mb-32">
+      <section className="w-full max-w-5xl mx-auto pt-24">
         <div className="animate-fade-in-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-left md:text-center tracking-tight uppercase mt-24" style={{
-            background: 'linear-gradient(90deg, #b8860b 20%, #1a365d 80%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            textShadow: '0 4px 24px rgba(184,134,11,0.10)',
-            letterSpacing: '.04em'
-          }}>¿Quiénes pueden solicitarlo?</h2>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 text-left md:text-center">
-            Personas con familiares ciudadanos o residentes permanentes que sufrirían dificultades extremas si se niega el perdón.
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center tracking-tight uppercase text-[#1a365d]">¿Quiénes pueden solicitarlo?</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 text-center">
+            Personas con familiares ciudadanos o residentes que sufrirían dificultades extremas si se niega el perdón.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white/80 shadow-md border-l-4 border-[var(--dorado-elegante)] p-6 flex items-start gap-4">
-              <span className="text-2xl text-[var(--dorado-elegante)] font-bold">•</span>
-              <div>
-                <h3 className="text-lg font-semibold text-[var(--azul-legal)] mb-1">Entradas irregulares o estadías prolongadas</h3>
-              </div>
+            <div className="bg-white/80 shadow-lg border-l-4 border-[#b8860b] p-6 flex items-center gap-4 rounded-r-lg">
+              <span className="text-2xl text-[#b8860b] font-bold">•</span>
+              <h3 className="text-lg font-semibold text-[#1a365d]">Entradas irregulares o estadías prolongadas</h3>
             </div>
-            <div className="bg-white/80 shadow-md border-l-4 border-[var(--dorado-elegante)] p-6 flex items-start gap-4">
-              <span className="text-2xl text-[var(--dorado-elegante)] font-bold">•</span>
-              <div>
-                <h3 className="text-lg font-semibold text-[var(--azul-legal)] mb-1">Deportaciones previas</h3>
-              </div>
+            <div className="bg-white/80 shadow-lg border-l-4 border-[#b8860b] p-6 flex items-center gap-4 rounded-r-lg">
+              <span className="text-2xl text-[#b8860b] font-bold">•</span>
+              <h3 className="text-lg font-semibold text-[#1a365d]">Deportaciones previas</h3>
             </div>
-            <div className="bg-white/80 shadow-md border-l-4 border-[var(--dorado-elegante)] p-6 flex items-start gap-4">
-              <span className="text-2xl text-[var(--dorado-elegante)] font-bold">•</span>
-              <div>
-                <h3 className="text-lg font-semibold text-[var(--azul-legal)] mb-1">Uso de documentos falsos</h3>
-              </div>
+            <div className="bg-white/80 shadow-lg border-l-4 border-[#b8860b] p-6 flex items-center gap-4 rounded-r-lg">
+              <span className="text-2xl text-[#b8860b] font-bold">•</span>
+              <h3 className="text-lg font-semibold text-[#1a365d]">Uso de documentos falsos</h3>
             </div>
-            <div className="bg-white/80 shadow-md border-l-4 border-[var(--dorado-elegante)] p-6 flex items-start gap-4">
-              <span className="text-2xl text-[var(--dorado-elegante)] font-bold">•</span>
-              <div>
-                <h3 className="text-lg font-semibold text-[var(--azul-legal)] mb-1">Ciertas condenas penales</h3>
-              </div>
+            <div className="bg-white/80 shadow-lg border-l-4 border-[#b8860b] p-6 flex items-center gap-4 rounded-r-lg">
+              <span className="text-2xl text-[#b8860b] font-bold">•</span>
+              <h3 className="text-lg font-semibold text-[#1a365d]">Ciertas condenas penales</h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sección: Requisitos generales como acordeón único */}
-      <section className="w-full max-w-5xl mx-auto mb-32">
+      {/* Sección: Requisitos generales */}
+      <section className="w-full max-w-5xl mx-auto pt-24">
         <div className="animate-fade-in-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-left md:text-center tracking-tight uppercase mt-24" style={{
-            background: 'linear-gradient(90deg, #1a365d 20%, #b8860b 80%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            textShadow: '0 4px 24px rgba(26,54,93,0.10)',
-            letterSpacing: '.04em'
-          }}>Requisitos generales</h2>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 text-left md:text-center">
-            Para solicitar un perdón migratorio en EE.UU. es fundamental cumplir con ciertos requisitos legales y documentales. Consulta la lista completa a continuación:
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center tracking-tight uppercase text-[#1a365d]">Requisitos Generales</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 text-center">
+            Para solicitar un perdón migratorio es fundamental cumplir con los siguientes requisitos legales y documentales:
           </p>
           <div className="w-full flex flex-col gap-4">
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon className="text-[var(--dorado-elegante)]" />}>
-                <Typography className="font-bold text-[var(--azul-legal)]">Ver lista completa de requisitos</Typography>
+            <Accordion className="bg-white/80 shadow-lg border-l-4 border-[#b8860b] rounded-r-lg">
+              <AccordionSummary expandIcon={<ExpandMoreIcon className="text-[#b8860b]" />}>
+                <Typography className="font-bold text-[#1a365d]">Ver lista completa de requisitos</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <ol className="list-decimal pl-6 space-y-4">
+                <ol className="list-decimal pl-6 space-y-4 text-gray-700">
                   <li>
-                    <span className="font-semibold text-[var(--azul-legal)]">Completar el formulario correspondiente:</span> Debes llenar y firmar el formulario adecuado (I-601, I-601A o I-212) según tu caso, usando la edición vigente. <a href="https://www.uscis.gov/es/i-601" target="_blank" rel="noopener noreferrer" className="text-[var(--dorado-elegante)] underline font-semibold hover:text-[var(--azul-legal)] transition ml-1">Ver formularios oficiales</a>
+                    <span className="font-semibold text-[#1a365d]">Formulario Correspondiente:</span> Llenar y firmar el formulario adecuado (I-601, I-601A o I-212).
                   </li>
                   <li>
-                    <span className="font-semibold text-[var(--azul-legal)]">Demostrar sufrimiento extremo de un familiar calificado:</span> Debes probar que un cónyuge o padre/madre ciudadano o residente sufriría dificultades extremas si se niega el perdón. Incluye informes médicos, pruebas económicas, cartas, etc.
+                    <span className="font-semibold text-[#1a365d]">Demostrar Sufrimiento Extremo:</span> Probar que un familiar calificado (cónyuge o padre/madre ciudadano o residente) sufriría dificultades extremas.
                   </li>
                   <li>
-                    <span className="font-semibold text-[var(--azul-legal)]">Presentar evidencia sólida y documentación de respaldo:</span> Incluye documentos biográficos, pruebas de relación familiar, antecedentes migratorios, sentencias judiciales, cartas explicativas y traducciones certificadas.
+                    <span className="font-semibold text-[#1a365d]">Evidencia Sólida:</span> Incluir documentos biográficos, pruebas de relación, antecedentes y traducciones certificadas.
                   </li>
                   <li>
-                    <span className="font-semibold text-[var(--azul-legal)]">Pagar la tarifa establecida por USCIS:</span> El costo varía según el formulario (I-601: $1,050, I-601A: $795, I-212: $1,175). El pago es final y puede hacerse por cheque, giro postal o tarjeta.
+                    <span className="font-semibold text-[#1a365d]">Pagar la Tarifa:</span> Cubrir el costo establecido por USCIS para el formulario correspondiente.
                   </li>
                   <li>
-                    <span className="font-semibold text-[var(--azul-legal)]">Asistir a la cita de datos biométricos (si es requerida):</span> USCIS puede citarte para tomar huellas, foto y firma como parte del proceso.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-[var(--azul-legal)]">No tener causales de inadmisibilidad no perdonables:</span> Ciertos delitos graves, terrorismo o fraude a la ciudadanía no pueden ser eximidos. Consulta tu caso con un abogado migratorio.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-[var(--azul-legal)]">Cumplir con requisitos adicionales según el tipo de perdón:</span> Por ejemplo, para el I-601A debes estar físicamente presente en EE.UU. y tener un caso de visa pendiente. Para el I-212, debes haber recibido una orden de deportación y solicitar permiso para reingresar.
+                    <span className="font-semibold text-[#1a365d]">Datos Biométricos:</span> Asistir a la cita para toma de huellas, foto y firma si es requerido.
                   </li>
                 </ol>
               </AccordionDetails>
@@ -147,32 +110,23 @@ export default function PerdonPage() {
         </div>
       </section>
 
-      {/* Espacio antes del pie de página */}
-      <div style={{ marginTop: '80px' }} />
-      {/* Pie de página especial para Perdón Migratorio en 3 columnas */}
-      <section className="w-full bg-[var(--azul-legal)] py-16 px-0 flex justify-center items-center">
-        <div className="w-full max-w-6xl flex flex-col md:flex-row items-stretch justify-between h-full px-4 md:px-12 xl:px-24 gap-12">
-          {/* Columna 1: Formularios principales */}
-          <div className="flex flex-col justify-center items-start flex-1 min-w-[220px] gap-4">
-            <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-wide">Formularios</h3>
-            <a href="https://www.uscis.gov/es/i-601" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition mb-1">Formulario I-601 – Exención por inadmisibilidad</a>
-            <a href="https://www.uscis.gov/es/i-601a" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition mb-1">Formulario I-601A – Exención provisional por presencia ilegal</a>
-            <a href="https://www.uscis.gov/es/i-212" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition">Formulario I-212 – Permiso tras deportación</a>
+      {/* Pie de página de recursos */}
+      <section className="w-full bg-transparent pt-24 pb-16 px-4 flex justify-center items-center">
+        <div className="w-full max-w-6xl flex flex-col md:flex-row items-center md:items-stretch justify-around gap-12 text-center md:text-left">
+          <div className="flex flex-col justify-start items-center md:items-start gap-4">
+            <h3 className="text-2xl font-bold text-[#1a365d] mb-2 uppercase tracking-wide">Formularios</h3>
+            <a href="https://www.uscis.gov/es/i-601" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#b8860b] hover:underline transition">Formulario I-601</a>
+            <a href="https://www.uscis.gov/es/i-601a" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#b8860b] hover:underline transition">Formulario I-601A</a>
+            <a href="https://www.uscis.gov/es/i-212" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#b8860b] hover:underline transition">Formulario I-212</a>
           </div>
-          {/* Columna 2: Guías y artículos */}
-          <div className="flex flex-col justify-center items-start flex-1 min-w-[220px] gap-4">
-            <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-wide">Guías y recursos</h3>
-            <a href="https://abogado.la/perdon-migratorio/" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition mb-1">Guía: Tipos de perdón migratorio y requisitos</a>
-            <a href="https://usa.elabogado.com/c/como-pedir-el-perdon-migratorio-en-estados-unidos/" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition">Cómo pedir el perdón migratorio en EE.UU.</a>
-          </div>
-          {/* Columna 3: Enlaces útiles adicionales (puedes agregar más si lo deseas) */}
-          <div className="flex flex-col justify-center items-start flex-1 min-w-[220px] gap-4">
-            <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-wide">Enlaces útiles</h3>
-            <a href="https://www.uscis.gov/es/forms/exenciones" target="_blank" rel="noopener noreferrer" className="underline text-[var(--dorado-elegante)] hover:text-white transition mb-1">Página oficial de exenciones USCIS</a>
-            <a href="https://www.uscis.gov/es/recursos" target="_blank" rel="noopener noreferrer" className="underline text-[var(--dorado-elegante)] hover:text-white transition">Recursos generales de inmigración</a>
+          <div className="flex flex-col justify-start items-center md:items-start gap-4">
+            <h3 className="text-2xl font-bold text-[#1a365d] mb-2 uppercase tracking-wide">Guías y Recursos</h3>
+            <a href="https://abogado.la/perdon-migratorio/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#b8860b] hover:underline transition">Guía sobre tipos de perdón</a>
+            <a href="https://www.uscis.gov/es/forms/exenciones" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#b8860b] hover:underline transition">Página oficial de exenciones</a>
           </div>
         </div>
       </section>
+      <FooterContacto />
     </main>
   );
 } 

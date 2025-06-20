@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import FooterContacto from '@/components/FooterContacto';
 
 const teamMembers = [
   {
@@ -61,17 +62,17 @@ export default function EquipoPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#15396a] via-[#1e2a47] to-[#15396a] font-sans animate-fade-in-up">
-      {/* <Navbar /> */}
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-12">
+      <div className="h-20 w-full" />
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 py-12 flex flex-col items-center justify-center">
         <h1 className="text-4xl font-extrabold text-white mb-2 text-center tracking-tight font-sans">Nuestro equipo</h1>
         <p className="text-base md:text-lg text-[#e0e7ef] text-center mb-10 max-w-2xl mx-auto font-sans font-normal">
           Somos un equipo de abogados especializados, comprometidos con brindar asesoría legal experta y personalizada en diversas áreas del derecho.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-4" style={{ marginTop: '4cm', marginLeft: '0.5cm' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-4 w-full justify-center items-center mx-auto justify-items-center">
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center min-w-[224px] max-w-[224px] font-playfair overflow-hidden group w-full border border-gray-700 transform hover:scale-105"
+              className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center min-w-[224px] max-w-[224px] font-playfair overflow-hidden group w-full border border-gray-700 transform hover:scale-105 mx-auto"
             >
               <div className="w-full flex justify-center items-center p-0">
                 <div
@@ -122,6 +123,8 @@ export default function EquipoPage() {
           ))}
         </div>
       </div>
+      <div className="mt-16 md:mt-20" />
+      <FooterContacto />
       <style jsx>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(30px) scale(0.98); }

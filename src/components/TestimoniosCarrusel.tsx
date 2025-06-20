@@ -100,7 +100,7 @@ export default function TestimoniosCarrusel() {
         >
           {testimonios.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-[var(--azul-legal)] text-white rounded-xl shadow-md px-5 py-6 flex flex-col items-center min-h-[200px] max-w-xs mx-auto transition-all duration-500">
+              <div className="bg-[var(--azul-legal)] text-white rounded-xl shadow-md px-5 py-6 flex flex-col items-center min-h-[200px] w-full max-w-md mx-auto transition-all duration-500">
                 <span className="text-lg font-semibold mb-1 text-center">{t.nombre}</span>
                 <div className="flex items-center mb-1">
                   {Array.from({ length: t.estrellas }).map((_, i) => (

@@ -38,6 +38,7 @@ export default function ConsultaForm() {
   const totalFases = 4;
   const [mostrarModal, setMostrarModal] = useState(false);
   const [visaPosible, setVisaPosible] = useState('');
+  const [resultadosMigratorios, setResultadosMigratorios] = useState<string[]>([]);
 
   // Estado para almacenar todas las respuestas del usuario
   const [respuestasUsuario, setRespuestasUsuario] = useState({});
@@ -179,8 +180,56 @@ export default function ConsultaForm() {
     return resultado ? resultado.visa : 'No aplica';
   }
 
+  function evaluarCondicionesMigratorias() {
+    const resultados: string[] = [];
+    const hoy = new Date();
+    const fechaDeIngreso = new Date(fechaIngreso);
+
+    if (fechaIngreso && fechaIngreso.length > 0) { // Asegurarse que la fecha no está vacía
+      const diffTiempo = hoy.getTime() - fechaDeIngreso.getTime();
+      const diffAnios = diffTiempo / (1000 * 3600 * 24 * 365.25);
+      const diffDias = diffTiempo / (1000 * 3600 * 24);
+
+      // Regla: Tiempo de residencia
+      if (diffAnios >= 20) {
+        resultados.push('Residencia Permanente (Green Card) por tiempo de residencia.');
+      } else if (diffAnios >= (1/12)) { // Al menos 1 mes
+        resultados.push('Autorización de Empleo por tiempo de residencia.');
+      }
+
+      // Regla: Asilo no radicado después de 1 año
+      if (diffAnios > 1 && asilo === 'no') {
+        resultados.push('Posibilidad de requerir Perdón y necesidad de iniciar Solicitud de Asilo.');
+      }
+
+      // Regla: Autorización de Empleo por visa y +150 días
+      if ((puertoEntrada === 'Aeropuerto con visa' || puertoEntrada === 'Consulado con visa') && diffDias > 150) {
+        resultados.push('Posibilidad de Autorización de Empleo por tiempo de espera con visa.');
+      }
+    }
+    
+    // Regla: Hijo Americano
+    if (hijosEEUU === 'si') {
+      resultados.push('Posibilidad de Residencia Permanente (Green Card) a través de hijo/a ciudadano/a.');
+    }
+
+    // Regla: Tipo de Asilo
+    if (puertoEntrada === 'Frontera' || puertoEntrada === 'CBP One') {
+      resultados.push('El tipo de solicitud de asilo podría ser Defensivo.');
+    } else if (puertoEntrada === 'Aeropuerto con visa' || puertoEntrada === 'Consulado con visa') {
+      resultados.push('El tipo de solicitud de asilo podría ser Afirmativo.');
+    }
+
+    // Eliminar duplicados si los hubiera
+    return [...new Set(resultados)];
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const visaDeterminada = determinarVisaExacta();
+    const otrosResultados = evaluarCondicionesMigratorias();
+
     // Construir el objeto de datos para el correo
     const datos = {
       ...respuestasUsuario,
@@ -205,7 +254,8 @@ export default function ConsultaForm() {
       ocupacion,
       ocupacionOtro: ocupacion === 'Otro' ? ocupacionOtro : '',
       ingresos,
-      visaPosible: determinarVisaExacta()
+      visaPosible: visaDeterminada,
+      resultadosAdicionales: otrosResultados.join('\\n') // Usar \\n para saltos de línea en emailjs
     };
     try {
       await emailjs.send(
@@ -217,7 +267,8 @@ export default function ConsultaForm() {
     } catch (error) {
       console.error('Error enviando el correo:', error);
     }
-    setVisaPosible(datos.visaPosible);
+    setVisaPosible(visaDeterminada);
+    setResultadosMigratorios(otrosResultados);
     setMostrarModal(true);
   };
 
@@ -499,17 +550,36 @@ export default function ConsultaForm() {
           </div>
         </form>
       </div>
-      {/* Modal de respuestas */}
+      {/* Modal de resultados */}
       {mostrarModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full relative animate-fade-in">
-            <h2 className="text-2xl font-bold mb-6 text-center text-[var(--azul-legal)]">Resultado</h2>
-            <div className="mb-8 text-xl font-bold text-center text-[var(--azul-legal)]">
-              {nombre ? `${nombre}, puedes optar por las siguientes visas:` : 'Puedes optar por las siguientes visas:'}
-              <br />
-              <span className="text-[var(--dorado-elegante)]">{visaPosible}</span>
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+          <div className="w-full max-w-lg mx-auto">
+            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 w-full max-w-2xl text-center relative z-10 animate-fade-in-up">
+              <h2 className="text-3xl font-bold mb-4 text-[var(--azul-legal)]">Resultados de tu Evaluación</h2>
+              
+              {visaPosible !== 'No aplica' && (
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-700 mb-2">Visas de Trabajo Potenciales:</h3>
+                  <p className="text-2xl font-bold text-[var(--dorado-elegante)] bg-blue-50 rounded-lg p-3">{visaPosible}</p>
+                </div>
+              )}
+
+              {resultadosMigratorios.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-700 mb-2">Otros Posibles Escenarios Migratorios:</h3>
+                  <ul className="list-disc list-inside text-left bg-gray-50 rounded-lg p-4 text-lg text-gray-800">
+                    {resultadosMigratorios.map((resultado, index) => (
+                      <li key={index} className="mb-2">{resultado}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <p className="text-base text-gray-600 my-6">Gracias, <span className="font-bold">{nombre}</span>. Un especialista de nuestro equipo se pondrá en contacto contigo muy pronto para discutir estos resultados en detalle.</p>
+              <button onClick={() => { setMostrarModal(false); limpiarFormulario(); }} className="w-full py-3 rounded-lg bg-[var(--azul-legal)] text-white text-lg font-semibold shadow-md hover:bg-blue-900 transition-all duration-300 uppercase tracking-wider focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Cerrar
+              </button>
             </div>
-            <button onClick={() => { setMostrarModal(false); limpiarFormulario(); }} className="w-full py-3 rounded-lg bg-[var(--azul-legal)] text-white text-lg font-semibold shadow-md hover:bg-blue-900 transition-all duration-300 uppercase tracking-wider focus:outline-none focus:ring-4 focus:ring-blue-200">Cerrar</button>
           </div>
         </div>
       )}
