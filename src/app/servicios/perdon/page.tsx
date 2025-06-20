@@ -146,6 +146,33 @@ export default function PerdonPage() {
           </div>
         </div>
       </section>
+
+      {/* Espacio antes del pie de página */}
+      <div style={{ marginTop: '80px' }} />
+      {/* Pie de página especial para Perdón Migratorio en 3 columnas */}
+      <section className="w-full bg-[var(--azul-legal)] py-16 px-0 flex justify-center items-center">
+        <div className="w-full max-w-6xl flex flex-col md:flex-row items-stretch justify-between h-full px-4 md:px-12 xl:px-24 gap-12">
+          {/* Columna 1: Formularios principales */}
+          <div className="flex flex-col justify-center items-start flex-1 min-w-[220px] gap-4">
+            <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-wide">Formularios</h3>
+            <a href="https://www.uscis.gov/es/i-601" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition mb-1">Formulario I-601 – Exención por inadmisibilidad</a>
+            <a href="https://www.uscis.gov/es/i-601a" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition mb-1">Formulario I-601A – Exención provisional por presencia ilegal</a>
+            <a href="https://www.uscis.gov/es/i-212" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition">Formulario I-212 – Permiso tras deportación</a>
+          </div>
+          {/* Columna 2: Guías y artículos */}
+          <div className="flex flex-col justify-center items-start flex-1 min-w-[220px] gap-4">
+            <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-wide">Guías y recursos</h3>
+            <a href="https://abogado.la/perdon-migratorio/" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition mb-1">Guía: Tipos de perdón migratorio y requisitos</a>
+            <a href="https://usa.elabogado.com/c/como-pedir-el-perdon-migratorio-en-estados-unidos/" target="_blank" rel="noopener noreferrer" className="underline text-white hover:text-[var(--dorado-elegante)] transition">Cómo pedir el perdón migratorio en EE.UU.</a>
+          </div>
+          {/* Columna 3: Enlaces útiles adicionales (puedes agregar más si lo deseas) */}
+          <div className="flex flex-col justify-center items-start flex-1 min-w-[220px] gap-4">
+            <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-wide">Enlaces útiles</h3>
+            <a href="https://www.uscis.gov/es/forms/exenciones" target="_blank" rel="noopener noreferrer" className="underline text-[var(--dorado-elegante)] hover:text-white transition mb-1">Página oficial de exenciones USCIS</a>
+            <a href="https://www.uscis.gov/es/recursos" target="_blank" rel="noopener noreferrer" className="underline text-[var(--dorado-elegante)] hover:text-white transition">Recursos generales de inmigración</a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 } 

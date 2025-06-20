@@ -9,7 +9,7 @@ export default function FooterContacto() {
         <div className="hidden md:block" style={{ width: '120px' }} />
         {/* Columna 1: Logo y eslogan */}
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left flex-1 w-1/4 h-full">
-          <Image src="/logo.png" alt="Colombo & Hurd Logo" width={140} height={70} className="mb-4" />
+          <Image src="/Logo.png" alt="Colombo & Hurd Logo" width={140} height={70} className="mb-4" />
           <p className="text-lg font-semibold text-[var(--dorado-elegante)] mb-2">Tu futuro migratorio, nuestra misión.</p>
           <div className="h-1 w-16 bg-[var(--dorado-elegante)] rounded mb-4 mx-auto md:mx-0" />
           <p className="text-base opacity-90">
