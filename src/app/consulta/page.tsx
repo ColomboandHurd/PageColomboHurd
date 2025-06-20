@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import emailjs from 'emailjs-com';
+import { supabase } from '@/lib/supabaseClient';
 
 const paises = [
   'Afganistán', 'Alemania', 'Argentina', 'Australia', 'Bolivia', 'Brasil', 'Canadá', 'Chile', 'China', 'Colombia', 'Costa Rica', 'Cuba', 'Ecuador', 'Egipto', 'El Salvador', 'España', 'Estados Unidos', 'Francia', 'Guatemala', 'Honduras', 'India', 'Italia', 'Japón', 'México', 'Nicaragua', 'Panamá', 'Paraguay', 'Perú', 'Portugal', 'Reino Unido', 'República Dominicana', 'Rusia', 'Uruguay', 'Venezuela', 'Otro'
@@ -229,6 +230,44 @@ export default function ConsultaForm() {
 
     const visaDeterminada = determinarVisaExacta();
     const otrosResultados = evaluarCondicionesMigratorias();
+
+    try {
+      const { data, error } = await supabase
+        .from('DatabaseColomboPage') // El nombre de tu tabla
+        .insert([
+          {
+            nombre: nombre,
+            fecha_nacimiento: fechaNacimiento,
+            nacionalidad: nacionalidad,
+            correo: correo,
+            telefono: telefono,
+            fecha_ingreso: fechaIngreso,
+            solicito_asilo: asilo === 'si',
+            tiempo_tramite_asilo: asilo === 'si' ? tiempoAsilo : null,
+            puerto_entrada: puertoEntrada,
+            puerto_entrada_otro: puertoEntrada === 'Otro' ? puertoOtro : null,
+            tiene_hijos_eeuu: hijosEEUU === 'si',
+            cantidad_hijos: hijosEEUU === 'si' ? parseInt(cantidadHijos, 10) : null,
+            nivel_educativo: nivel,
+            tiene_oferta_empleo: oferta === 0,
+            tiene_titulo: titulo === 0,
+            tiene_experiencia: experiencia === 0,
+            ha_generado_impacto: impacto === 0,
+            lugar_residencia: residencia === 0 ? 'Estados Unidos' : 'Colombia',
+            ocupacion: ocupacion,
+            ocupacion_otra: ocupacion === 'Otro' ? ocupacionOtro : null,
+            ingresos: ingresos,
+            resultado_visa: visaDeterminada,
+            resultados_adicionales: otrosResultados.join('\\n')
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+    } catch (error: any) {
+      console.error('Error detallado de Supabase:', error.message || JSON.stringify(error));
+    }
 
     // Construir el objeto de datos para el correo
     const datos = {
