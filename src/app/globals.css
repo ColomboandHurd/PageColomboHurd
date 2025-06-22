@@ -345,7 +345,21 @@ body {
   background: none;
 }
 .dropdown-link:hover {
-  color: #b8860b !important;
-  background: none;
+  background-color: var(--dorado-elegante);
+  color: var(--azul-legal);
+}
+
+/* Animación para el botón flotante de WhatsApp */
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 3s ease-in-out infinite;
 }
 

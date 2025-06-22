@@ -23,17 +23,16 @@ export default function FooterContacto() {
           <h3 className="text-2xl font-bold text-white mb-2 text-center md:text-left">Contáctanos</h3>
           <div className="flex items-center gap-2 text-lg justify-center md:justify-start">
             <EnvelopeIcon className="h-6 w-6 text-[var(--dorado-elegante)]" />
-            <a href="mailto:info@colombohurd.com" className="hover:text-[var(--dorado-elegante)] transition-colors">info@colombohurd.com</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@colombohurd.com" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">info@colombohurd.com</a>
           </div>
           <div className="flex items-center gap-2 text-lg justify-center md:justify-start">
             <PhoneIcon className="h-6 w-6 text-[var(--dorado-elegante)]" />
-            <a href="tel:4074781111" className="hover:text-[var(--dorado-elegante)] transition-colors">(407) 478-1111</a>
+            <a href="https://wa.me/19515781000" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">+1 (951) 578-1000</a>
           </div>
           <div className="flex items-center gap-2 text-lg justify-center md:justify-start">
             <MapPinIcon className="h-6 w-6 text-[var(--dorado-elegante)]" />
-            <span>301 E Pine St #450, Orlando, FL 32801</span>
+            <span>1146 E. Green St. Pasadena, CA 91106</span>
           </div>
-          <div className="text-base mt-2 text-center md:text-left">Horario: 8AM–5:30PM</div>
         </div>
         {/* Separador visual solo en escritorio */}
         <div className="hidden md:block h-48 w-px bg-white/20 mx-4 self-center" />
@@ -41,7 +40,7 @@ export default function FooterContacto() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 w-full md:w-auto mx-auto md:mx-0 gap-4 mb-8 md:mb-0 px-2">
           <h3 className="text-2xl font-bold text-white mb-2 text-center md:text-left">Redes Sociales</h3>
           <div className="flex flex-col gap-3 w-full items-center">
-            <a href="#" className="flex items-center justify-center gap-2 text-lg font-medium hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=61577115076052" className="flex items-center justify-center gap-2 text-lg font-medium hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">
               {/* Facebook */}
               <svg width="24" height="24" fill="currentColor" className="text-[var(--dorado-elegante)]" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
               <span>Facebook</span>
@@ -69,10 +68,10 @@ export default function FooterContacto() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 w-full md:w-auto mx-auto md:mx-0 gap-4 px-2">
           <h3 className="text-2xl font-bold text-white mb-2 text-center md:text-left">Recursos</h3>
           <ul className="flex flex-col gap-2 w-full items-center md:items-start">
-            <li><a href="#" className="hover:text-[var(--dorado-elegante)] transition-colors">Blog de inmigración</a></li>
-            <li><a href="#" className="hover:text-[var(--dorado-elegante)] transition-colors">Guía de visas</a></li>
-            <li><a href="#" className="hover:text-[var(--dorado-elegante)] transition-colors">Preguntas frecuentes</a></li>
-            <li><a href="#" className="hover:text-[var(--dorado-elegante)] transition-colors">Testimonios</a></li>
+            <li><a href="https://www.uscis.gov/es" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">Blog de inmigración</a></li>
+            <li><a href="https://www.state.gov/visas/" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">Guía de visas</a></li>
+            <li><a href="https://ais.usvisa-info.com/es-CO/iv/information/faqs" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">Preguntas frecuentes</a></li>
+            <li><a href="/informacion#testimonios" className="hover:text-[var(--dorado-elegante)] transition-colors">Testimonios</a></li>
           </ul>
         </div>
       </div>

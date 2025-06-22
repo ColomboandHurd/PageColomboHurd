@@ -69,6 +69,30 @@ export default function NoticiasPage() {
     return images[(num - 1) % images.length];
   };
 
+  // Enlaces de YouTube para cada noticia
+  const youtubeLinks = [
+    "https://www.youtube.com/watch?v=bIjQzjNGgy8",
+    "https://www.youtube.com/watch?v=btcHY2f_lnU",
+    "https://www.youtube.com/watch?v=GNMU-y_lnGc",
+    "https://www.youtube.com/watch?v=5ybzhhl_klI",
+    "https://www.youtube.com/watch?v=nKZyPNxPqG0",
+    "https://www.youtube.com/watch?v=W5EwBJgbntY",
+    "https://www.youtube.com/watch?v=W5EwBJgbntY",
+    "https://www.youtube.com/watch?v=dSxYSoSEsV0",
+    "https://www.youtube.com/watch?v=VMmRGZcxiRQ",
+    "https://www.youtube.com/watch?v=EaRIx-WwEnI",
+    "https://www.youtube.com/watch?v=j7ZwI4klMfA",
+    "https://www.youtube.com/watch?v=ux8K4kI5DPw",
+    "https://www.youtube.com/watch?v=xYoEsp7W_sI",
+    "https://www.youtube.com/watch?v=nk8yv6xGx2c",
+    "https://www.youtube.com/watch?v=83wSor5PkUA",
+    "https://www.youtube.com/watch?v=NUBQKdsWuwc",
+    "https://www.youtube.com/watch?v=8_MWtUwPr9I",
+    "https://www.youtube.com/watch?v=Q8XpUAgVELw",
+    "https://www.youtube.com/watch?v=gaGd6iRIkCE",
+    "https://www.youtube.com/watch?v=8fAGGJoC8BA",
+  ];
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#15396a] via-[#1e2a47] to-[#15396a] font-sans animate-fade-in-up">
       <div className="container mx-auto px-4 pt-10">
@@ -130,7 +154,7 @@ export default function NoticiasPage() {
                 </div>
                 <div className="flex justify-center mt-auto">
                   <a
-                    href="https://youtube.com"
+                    href={youtubeLinks[num - 1]}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#FF0000] text-white text-xs font-bold rounded shadow hover:bg-red-700 transition-colors duration-200 cursor-pointer flex items-center gap-1 px-4 py-2"
@@ -145,9 +169,9 @@ export default function NoticiasPage() {
             </div>
           ))}
         </div>
-        <div className="mt-16 md:mt-20" />
-        <FooterContacto />
+        <div className="mt-20 md:mt-32" />
       </div>
+      <FooterContacto />
     </main>
   );
 } 

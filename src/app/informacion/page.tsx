@@ -173,7 +173,9 @@ export default function InformacionPage() {
         </div>
         {/* Espacio antes de testimonios */}
         <div style={{ marginTop: '64px' }} />
-        <TestimoniosCarrusel />
+        <div id="testimonios">
+          <TestimoniosCarrusel />
+        </div>
       </section>
       {/* Espacio extra antes del footer */}
       <div style={{ marginTop: '80px' }} />
