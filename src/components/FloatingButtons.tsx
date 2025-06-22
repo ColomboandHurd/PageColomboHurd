@@ -8,8 +8,8 @@ import ConsultaFloatingButton from './ConsultaFloatingButton';
 export default function FloatingButtons() {
   const pathname = usePathname();
   
-  // Mostrar el botón de consulta en todas las páginas excepto en la página de inicio
-  const showConsultaButton = pathname !== '/';
+  // No mostrar el botón de consulta en la página de inicio ni en la página de consulta
+  const showConsultaButton = pathname !== '/' && pathname !== '/consulta';
 
   return (
     <>
