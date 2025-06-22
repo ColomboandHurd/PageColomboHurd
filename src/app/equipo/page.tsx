@@ -7,53 +7,58 @@ import FooterContacto from '@/components/FooterContacto';
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Juan Pérez",
-    position: "Socio Principal",
-    experience: "20 años de experiencia en derecho corporativo",
-    education: "Doctorado en Derecho - Universidad Nacional",
-    specialties: ["Derecho Corporativo", "Fusiones y Adquisiciones", "Derecho Internacional"],
-    description: "Especialista en derecho corporativo con amplia experiencia en negociaciones internacionales y fusiones empresariales. Ha liderado numerosos casos exitosos en el ámbito internacional.",
-    image: "/equipo/abogadoJuan.png"
+    name: "Dra. Valeria Gómez",
+    position: "Abogada Asociada",
+    age: "27 años",
+    experience: "5 años de experiencia en derecho migratorio y humanitario",
+    education: "Licenciatura en Derecho - Universidad de Los Andes\nMaestría en Derechos Humanos - Universidad Complutense de Madrid",
+    specialties: ["Asilo y Refugio", "Visas Humanitarias", "Protección Internacional"],
+    description: "Comprometida con la defensa de los derechos de migrantes y refugiados. Ha trabajado en casos de asilo político y visas humanitarias con un enfoque integral y humano.",
+    image: "/equipo/draValeriaGomez.png"
   },
   {
     id: 2,
-    name: "Dra. María Rodríguez",
-    position: "Socia Senior",
-    experience: "15 años de experiencia en derecho laboral",
-    education: "Maestría en Derecho Laboral - Universidad de los Andes",
-    specialties: ["Derecho Laboral", "Relaciones Industriales", "Compliance"],
-    description: "Experta en derecho laboral y compliance, con un historial exitoso en la resolución de conflictos laborales complejos y la implementación de programas de cumplimiento normativo.",
-    image: "/equipo/abogadaMaria.png"
+    name: "Dr. Nicolás Rivas",
+    position: "Coordinador de Litigios Migratorios",
+    age: "30 años",
+    experience: "7 años de experiencia representando clientes en tribunales migratorios",
+    education: "Doctorado en Derecho - Universidad Nacional Autónoma de México\nCurso de Litigación Oral en EE. UU.",
+    specialties: ["Defensa ante Deportaciones", "Apelaciones Migratorias", "Litigación Oral"],
+    description: "Especialista en defensa migratoria, con énfasis en procesos de deportación y apelaciones complejas. Apasionado por la justicia migratoria.",
+    image: "/equipo/drNicolasRivas.png"
   },
   {
     id: 3,
-    name: "Dr. Carlos Martínez",
-    position: "Socio Senior",
-    experience: "18 años de experiencia en derecho migratorio",
-    education: "Maestría en Derecho Internacional - Universidad de Harvard",
-    specialties: ["Derecho Migratorio", "Visas de Trabajo", "Residencia Permanente"],
-    description: "Especialista en derecho migratorio con amplia experiencia en visas de trabajo y procesos de residencia permanente. Ha ayudado a cientos de profesionales a establecerse en Estados Unidos.",
-    image: "/equipo/abogadoCarlos.png"
+    name: "Dra. Sofía Herrera",
+    position: "Especialista en Visas de Inversión",
+    age: "26 años",
+    experience: "4 años asesorando empresarios extranjeros",
+    education: "Licenciatura en Derecho - Pontificia Universidad Javeriana\nCertificación en Derecho de Negocios Internacionales – HarvardX",
+    specialties: ["Visas E-2", "Derecho Corporativo Migratorio", "Estrategias de Inversión Legal"],
+    description: "Asesora a inversionistas en procesos de visa E-2 y expansión de negocios. Tiene enfoque en planificación migratoria estratégica.",
+    image: "/equipo/draSofiaHerrera.png"
   },
   {
     id: 4,
-    name: "Dra. Ana García",
-    position: "Abogada Senior",
-    experience: "12 años de experiencia en derecho corporativo",
-    education: "Maestría en Derecho Empresarial - Universidad de Columbia",
-    specialties: ["Derecho Empresarial", "Contratos Internacionales", "Propiedad Intelectual"],
-    description: "Experta en derecho empresarial y contratos internacionales. Su experiencia incluye la asesoría a empresas multinacionales en sus operaciones en Estados Unidos.",
-    image: "/equipo/abogadaAna.png"
+    name: "Dr. Andrés Medina",
+    position: "Abogado Senior de Naturalización",
+    age: "32 años",
+    experience: "9 años apoyando procesos de Green Card y ciudadanía",
+    education: "Licenciatura en Derecho - Universidad de Buenos Aires\nMaestría en Derecho Internacional - Universidad de Georgetown",
+    specialties: ["Green Card por Familia o Trabajo", "Ciudadanía por Naturalización", "Ajuste de Estatus"],
+    description: "Reconocido por su precisión en procesos de residencia permanente y ciudadanía. Brinda atención cercana y personalizada.",
+    image: "/equipo/drAndresMedina.png"
   },
   {
     id: 5,
-    name: "Dr. Luis Hernández",
-    position: "Abogado Senior",
-    experience: "14 años de experiencia en derecho migratorio",
-    education: "Maestría en Derecho Internacional - Universidad de Georgetown",
-    specialties: ["Derecho Migratorio", "Asilo Político", "Naturalización"],
-    description: "Especialista en casos de asilo político y naturalización. Ha representado exitosamente a numerosos clientes en procesos complejos de inmigración.",
-    image: "/equipo/abogadoLuis.png"
+    name: "Dr. Matías Ortega",
+    position: "Abogado Junior",
+    age: "25 años",
+    experience: "3 años en derecho consular y procesamiento de visas",
+    education: "Licenciatura en Derecho - Universidad de Lima\nPrácticas profesionales en consulado de EE. UU. en Perú",
+    specialties: ["Visas F-1 y J-1", "Procesos Consulares", "Reunificación Familiar"],
+    description: "Joven promesa del derecho migratorio, con enfoque en asesoría consular para estudiantes, trabajadores temporales y reunificación familiar.",
+    image: "/equipo/drMatiasOrtega.png"
   }
 ];
 
@@ -80,27 +85,40 @@ export default function EquipoPage() {
                   onMouseEnter={() => setHovered(member.id)}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  <Image src={member.image} alt={member.name} width={224} height={320} className="object-cover w-full h-full" style={{ borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' }} />
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={224}
+                    height={320}
+                    className={`object-cover w-full h-full rounded-t-xl transition-all duration-300 ${
+                      hovered === member.id ? 'ring-2 ring-inset ring-[#b8860b]' : ''
+                    }`}
+                  />
                   {hovered === member.id && (
-                    <div className="absolute top-0 left-0 w-56 h-80 bg-[#e0e7ef] rounded-t-xl shadow-2xl border border-[#8a8d91] px-3 py-3 flex flex-col gap-2 justify-center items-center animate-fadeIn z-20 transition-all duration-500 ease-in-out overflow-y-auto font-sans text-[11px] md:text-sm leading-tight">
-                      <div className="w-full text-center space-y-2 text-[#232946] font-sans">
+                    <div className="absolute top-0 left-0 w-56 h-80 bg-[#1a365d] rounded-t-xl shadow-2xl ring-2 ring-inset ring-[#b8860b] px-4 py-4 flex flex-col gap-3 justify-start items-center animate-fadeIn z-20 transition-all duration-300 ease-out overflow-y-auto font-sans text-[12px] leading-relaxed">
+                      <div className="w-full text-center space-y-3 text-white font-sans antialiased">
                         <div>
-                          <span className="block font-bold mb-0.5 text-[#C8102E] font-sans">Experiencia</span>
-                          <span className="block text-black font-normal font-sans">{member.experience}</span>
+                          <span className="block font-bold mb-1 text-[#FFD700] font-sans text-[13px] tracking-wide">
+                            Edad: <span className="font-medium text-white">{member.age}</span>
+                          </span>
                         </div>
                         <div>
-                          <span className="block font-bold mb-0.5 text-[#C8102E] font-sans">Educación</span>
-                          <span className="block text-black font-normal font-sans">{member.education}</span>
+                          <span className="block font-bold mb-1 text-[#FFD700] font-sans text-[13px] tracking-wide">Experiencia</span>
+                          <span className="block text-white font-medium font-sans">{member.experience}</span>
                         </div>
                         <div>
-                          <span className="block font-bold mb-0.5 text-[#C8102E] font-sans">Descripción</span>
-                          <span className="block italic text-black font-normal font-sans">{member.description}</span>
+                          <span className="block font-bold mb-1 text-[#FFD700] font-sans text-[13px] tracking-wide">Educación</span>
+                          <span className="block text-white font-medium font-sans whitespace-pre-line leading-tight font-smooth">{member.education}</span>
                         </div>
                         <div>
-                          <span className="block font-bold mb-0.5 text-[#C8102E] font-sans">Especialidades</span>
-                          <div className="flex flex-wrap gap-1 mt-1 justify-center">
+                          <span className="block font-bold mb-1 text-[#FFD700] font-sans text-[13px] tracking-wide">Descripción</span>
+                          <span className="block italic text-white font-medium font-sans leading-tight font-smooth">{member.description}</span>
+                        </div>
+                        <div>
+                          <span className="block font-bold mb-1 text-[#FFD700] font-sans text-[13px] tracking-wide">Especialidades</span>
+                          <div className="flex flex-wrap gap-1.5 mt-1 justify-center">
                             {member.specialties.map((spec, idx) => (
-                              <span key={idx} className="bg-white font-semibold text-[10px] md:text-xs px-2 py-0.5 rounded-full border border-[#FFD700] shadow transition-all duration-200 text-black font-sans">
+                              <span key={idx} className="bg-white font-bold text-[11px] px-3 py-1 rounded-full border-2 border-[#FFD700] shadow-lg transition-all duration-200 text-[#1a365d] font-sans font-smooth transform-gpu">
                                 {spec}
                               </span>
                             ))}
@@ -123,7 +141,7 @@ export default function EquipoPage() {
           ))}
         </div>
       </div>
-      <div className="mt-16 md:mt-20" />
+      <div className="mt-48" />
       <FooterContacto />
       <style jsx>{`
         @keyframes fadeIn {
@@ -146,6 +164,27 @@ export default function EquipoPage() {
         .group:hover .z-20 {
           scrollbar-width: thin;
           scrollbar-color: #bdbdbd transparent;
+        }
+        
+        /* Mejoras para nitidez */
+        .font-smooth {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
+        }
+        
+        .transform-gpu {
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+        
+        .will-change-transform {
+          will-change: transform;
+        }
+        
+        .subpixel-antialiased {
+          -webkit-font-smoothing: subpixel-antialiased;
         }
       `}</style>
     </main>

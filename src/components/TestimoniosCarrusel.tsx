@@ -8,64 +8,64 @@ import './TestimoniosCarrusel.css'; // Para estilos personalizados de flechas
 
 const testimonios = [
   {
-    nombre: 'Heather',
+    nombre: 'María Elena Rodríguez',
     estrellas: 5,
-    nacionalidad: 'Reino Unido',
+    nacionalidad: 'México',
     texto: 'Gracias a este equipo, todo fue claro desde el inicio. Estoy muy agradecida por su profesionalismo.'
   },
   {
-    nombre: 'Celidet',
-    estrellas: 5,
-    nacionalidad: 'Perú',
-    texto: 'Mi familia y yo vivimos una experiencia transformadora. Estoy muy agradecida por la calidez humana del servicio.'
+    nombre: 'Carlos Andrés Mendoza',
+    estrellas: 4,
+    nacionalidad: 'Colombia',
+    texto: 'Mi familia y yo vivimos una experiencia transformadora. Estoy muy agradecido por la calidez humana del servicio.'
   },
   {
-    nombre: 'Amer',
+    nombre: 'Ana Sofía González',
     estrellas: 5,
-    nacionalidad: 'Kuwait',
+    nacionalidad: 'Venezuela',
     texto: 'Siempre atentos y rápidos. Se siente la diferencia cuando alguien realmente se preocupa por tu caso.'
   },
   {
-    nombre: 'Luz',
-    estrellas: 5,
-    nacionalidad: 'Colombia',
+    nombre: 'Luis Fernando Torres',
+    estrellas: 4,
+    nacionalidad: 'Perú',
     texto: 'Gracias al equipo volví a tener esperanza. Hoy ya soy residente legal en EE.UU. después de tantos años.'
   },
   {
-    nombre: 'Connie',
+    nombre: 'Isabella Martínez',
     estrellas: 5,
-    nacionalidad: 'República Dominicana',
+    nacionalidad: 'Argentina',
     texto: 'Agradezco mucho que hayan agilizado todo tan rápido. Este viaje familiar fue posible gracias a ustedes.'
   },
   {
-    nombre: 'Jorge',
-    estrellas: 5,
-    nacionalidad: 'México',
+    nombre: 'Diego Alejandro Silva',
+    estrellas: 4,
+    nacionalidad: 'Chile',
     texto: 'Una atención impecable. Siempre tuve una respuesta clara y transparente en cada paso del proceso.'
   },
   {
-    nombre: 'Fatima',
+    nombre: 'Valentina Herrera',
     estrellas: 5,
-    nacionalidad: 'España',
+    nacionalidad: 'Ecuador',
     texto: 'Me sentí acompañada todo el tiempo. El trato fue cercano y profesional desde el principio.'
   },
   {
-    nombre: 'Yumi',
-    estrellas: 5,
-    nacionalidad: 'Japón',
+    nombre: 'Gabriel Antonio Ruiz',
+    estrellas: 4,
+    nacionalidad: 'Guatemala',
     texto: 'No conocía bien el proceso, pero me guiaron paso a paso con paciencia y claridad. ¡Gracias infinitas!'
   },
   {
-    nombre: 'Samir',
+    nombre: 'Camila Patricia Vargas',
     estrellas: 5,
-    nacionalidad: 'India',
-    texto: 'Me sorprendió la rapidez y la atención personalizada. Estoy muy satisfecho con todo el proceso.'
+    nacionalidad: 'Costa Rica',
+    texto: 'Me sorprendió la rapidez y la atención personalizada. Estoy muy satisfecha con todo el proceso.'
   },
   {
-    nombre: 'Mariana',
-    estrellas: 5,
-    nacionalidad: 'Argentina',
-    texto: 'Este equipo hizo posible algo que parecía imposible. Eternamente agradecida por su compromiso.'
+    nombre: 'Roberto Carlos Jiménez',
+    estrellas: 4,
+    nacionalidad: 'Honduras',
+    texto: 'Este equipo hizo posible algo que parecía imposible. Eternamente agradecido por su compromiso.'
   }
 ];
 
@@ -103,8 +103,10 @@ export default function TestimoniosCarrusel() {
               <div className="bg-[var(--azul-legal)] text-white rounded-xl shadow-md px-5 py-6 flex flex-col items-center min-h-[200px] w-full max-w-md mx-auto transition-all duration-500">
                 <span className="text-lg font-semibold mb-1 text-center">{t.nombre}</span>
                 <div className="flex items-center mb-1">
-                  {Array.from({ length: t.estrellas }).map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-base">★</span>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className={`text-base ${i < t.estrellas ? 'text-yellow-400' : 'text-gray-400'}`}>
+                      {i < t.estrellas ? '★' : '☆'}
+                    </span>
                   ))}
                 </div>
                 <span className="text-xs text-[var(--dorado-elegante)] mb-2 text-center">{t.nacionalidad}</span>
