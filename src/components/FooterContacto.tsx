@@ -23,7 +23,7 @@ export default function FooterContacto() {
           <h3 className="text-2xl font-bold text-white mb-2 text-center md:text-left">Contáctanos</h3>
           <div className="flex items-center gap-2 text-lg justify-center md:justify-start">
             <EnvelopeIcon className="h-6 w-6 text-[var(--dorado-elegante)]" />
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@colombohurd.com" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">info@colombohurd.com</a>
+            <a href="mailto:info@colombo-hurdlaw.com" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">info@colombo-hurdlaw.com</a>
           </div>
           <div className="flex items-center gap-2 text-lg justify-center md:justify-start">
             <PhoneIcon className="h-6 w-6 text-[var(--dorado-elegante)]" />
