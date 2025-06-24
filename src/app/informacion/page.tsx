@@ -25,6 +25,16 @@ export default function InformacionPage() {
             }}>
               Permite a profesionales extranjeros trabajar en Estados Unidos en ocupaciones especializadas. Es la visa más solicitada por empresas para atraer talento internacional calificado.
             </p>
+            <div className="flex justify-center mt-6">
+              <a
+                href="https://wa.me/19495947776?text=Hola%2C%20estoy%20interesado%20en%20la%20Visa%20H1B."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow transition-colors text-lg"
+              >
+                Aplicar a esta Visa
+              </a>
+            </div>
           </div>
           {/* Columna derecha: Video H1B */}
           <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2">
@@ -70,6 +80,16 @@ export default function InformacionPage() {
             }}>
               Dirigida a trabajadores temporales no agrícolas para empleos estacionales o de corta duración. Ideal para trabajos que requieren personal adicional durante períodos específicos del año.
             </p>
+            <div className="flex justify-center mt-6">
+              <a
+                href="https://wa.me/19495947776?text=Hola%2C%20estoy%20interesado%20en%20la%20Visa%20H2B."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow transition-colors text-lg"
+              >
+                Aplicar a esta Visa
+              </a>
+            </div>
           </div>
         </div>
 
@@ -91,6 +111,16 @@ export default function InformacionPage() {
             }}>
               Para profesionales con títulos avanzados o habilidades excepcionales que buscan residencia permanente. Requiere patrocinio de empleador o demostración de habilidad excepcional.
             </p>
+            <div className="flex justify-center mt-6">
+              <a
+                href="https://wa.me/19495947776?text=Hola%2C%20estoy%20interesado%20en%20la%20Visa%20EB2."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow transition-colors text-lg"
+              >
+                Aplicar a esta Visa
+              </a>
+            </div>
           </div>
           {/* Columna derecha: Video EB2 */}
           <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2">
@@ -136,6 +166,16 @@ export default function InformacionPage() {
             }}>
               Permite solicitar residencia permanente sin oferta laboral si demuestras que tu trabajo beneficia al interés nacional. Ideal para investigadores, científicos y profesionales destacados.
             </p>
+            <div className="flex justify-center mt-6">
+              <a
+                href="https://wa.me/19495947776?text=Hola%2C%20estoy%20interesado%20en%20la%20Visa%20EB2-NIW."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow transition-colors text-lg"
+              >
+                Aplicar a esta Visa
+              </a>
+            </div>
           </div>
         </div>
 
@@ -157,6 +197,16 @@ export default function InformacionPage() {
             }}>
               La visa EB3 permite a trabajadores calificados, no calificados y profesionales obtener la residencia permanente en Estados Unidos a través de una oferta laboral. Es ideal para quienes buscan oportunidades de empleo en diversas áreas, incluso sin título universitario. Requiere una oferta de trabajo y el patrocinio de un empleador estadounidense.
             </p>
+            <div className="flex justify-center mt-6">
+              <a
+                href="https://wa.me/19495947776?text=Hola%2C%20estoy%20interesado%20en%20la%20Visa%20EB3."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow transition-colors text-lg"
+              >
+                Aplicar a esta Visa
+              </a>
+            </div>
           </div>
           {/* Columna derecha: Video EB3 */}
           <div className="flex-1 bg-white flex items-center justify-center p-8 md:p-20 min-h-[400px] order-2">
