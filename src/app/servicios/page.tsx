@@ -137,10 +137,29 @@ export default function ServiciosPage() {
                 </ul>
                 
                 {/* Botón de contacto */}
-                <div className="mt-6">
-                  <button className="w-full bg-[#C8102E] text-white font-bold py-3 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300 font-['Poppins']">
-                    Consultar Servicio
-                  </button>
+                <div className="mt-6 flex justify-center w-full">
+                  <a
+                    href={`https://wa.me/19495947776?text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20${encodeURIComponent(servicio.titulo)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#FFD700] text-[#1a365d] font-bold text-lg rounded-3xl transition-colors duration-300 font-['Poppins'] flex items-center justify-center gap-2"
+                    style={{
+                      minWidth: '320px',
+                      maxWidth: '100%',
+                      padding: '20px 48px',
+                      display: 'block',
+                      textAlign: 'center',
+                      lineHeight: '1.2',
+                      fontWeight: 700,
+                      fontSize: '1.35rem',
+                      border: 'none',
+                    }}
+                    onMouseOver={e => e.currentTarget.style.backgroundColor = '#e6be00'}
+                    onMouseOut={e => e.currentTarget.style.backgroundColor = '#FFD700'}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 24 24" className="text-green-600"><path d="M12.004 2.003c-5.522 0-9.997 4.475-9.997 9.997 0 1.762.463 3.484 1.341 4.997l-1.409 5.151a1.001 1.001 0 0 0 1.225 1.225l5.151-1.409a9.953 9.953 0 0 0 4.997 1.341c5.522 0 9.997-4.475 9.997-9.997s-4.475-9.997-9.997-9.997zm0 17.994a7.96 7.96 0 0 1-4.073-1.142.999.999 0 0 0-.708-.104l-3.463.947.947-3.463a1 1 0 0 0-.104-.708A7.96 7.96 0 0 1 4.01 12c0-4.418 3.582-8 7.994-8 4.418 0 8 3.582 8 8 0 4.412-3.582 7.994-8 7.994zm4.425-5.571c-.242-.121-1.434-.707-1.655-.788-.221-.081-.382-.121-.543.121-.161.242-.623.788-.764.949-.141.161-.282.181-.523.06-.242-.121-1.022-.377-1.946-1.201-.719-.641-1.205-1.433-1.347-1.675-.141-.242-.015-.373.106-.494.109-.108.242-.282.363-.423.121-.141.161-.242.242-.403.081-.161.04-.302-.02-.423-.06-.121-.543-1.312-.744-1.797-.196-.471-.396-.406-.543-.414l-.463-.008c-.161 0-.423.06-.646.302-.221.242-.846.826-.846 2.012 0 1.186.866 2.332.987 2.493.121.161 1.705 2.604 4.136 3.548.578.199 1.028.318 1.379.408.579.147 1.106.126 1.523.077.465-.056 1.434-.586 1.637-1.152.202-.566.202-1.051.141-1.152-.06-.101-.221-.161-.463-.282z"/></svg>
+                    Solicitar servicio
+                  </a>
                 </div>
               </div>
             </div>

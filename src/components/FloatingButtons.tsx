@@ -13,7 +13,7 @@ export default function FloatingButtons() {
 
   return (
     <>
-      <WhatsAppFloatingButton />
+      <WhatsAppFloatingButton pathname={pathname} />
       {showConsultaButton && <ConsultaFloatingButton />}
     </>
   );

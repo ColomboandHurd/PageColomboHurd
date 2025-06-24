@@ -45,9 +45,7 @@ const Navbar = () => {
         {/* Enlaces en escritorio */}
         <div className="hidden md:flex flex-1 justify-end items-center gap-8">
           <Link href="/" className={isActive('/') ? 'active text-[var(--dorado-elegante)] font-bold' : ''}>Inicio</Link>
-          <Link href="/informacion" className={isActive('/informacion') ? 'active text-[var(--dorado-elegante)] font-bold' : ''}>Información</Link>
-          <Link href="/equipo" className={isActive('/equipo') ? 'active text-[var(--dorado-elegante)] font-bold' : ''}>Equipo</Link>
-          <Link href="/noticias" className={isActive('/noticias') ? 'active text-[var(--dorado-elegante)] font-bold' : ''}>Noticias</Link>
+          <Link href="/informacion" className={isActive('/informacion') ? 'active text-[var(--dorado-elegante)] font-bold' : ''}>VISAS</Link>
           {/* Dropdown Servicios */}
           <div
             className="relative"
@@ -85,14 +83,14 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          <Link href="/equipo" className={isActive('/equipo') ? 'active text-[var(--dorado-elegante)] font-bold' : ''}>Equipo</Link>
+          <Link href="/noticias" className={isActive('/noticias') ? 'active text-[var(--dorado-elegante)] font-bold' : ''}>Noticias</Link>
         </div>
         {/* Menú móvil */}
         {isMobileMenuOpen && (
           <div className="absolute top-20 left-0 w-full bg-[var(--azul-legal)] shadow-lg flex flex-col items-center gap-2 py-6 z-40 animate-fade-in-up">
             <Link href="/" className={`w-full text-center py-2 ${isActive('/') ? 'text-[var(--dorado-elegante)] font-bold' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(false)}>Inicio</Link>
-            <Link href="/informacion" className={`w-full text-center py-2 ${isActive('/informacion') ? 'text-[var(--dorado-elegante)] font-bold' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(false)}>Información</Link>
-            <Link href="/equipo" className={`w-full text-center py-2 ${isActive('/equipo') ? 'text-[var(--dorado-elegante)] font-bold' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(false)}>Equipo</Link>
-            <Link href="/noticias" className={`w-full text-center py-2 ${isActive('/noticias') ? 'text-[var(--dorado-elegante)] font-bold' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(false)}>Noticias</Link>
+            <Link href="/informacion" className={`w-full text-center py-2 ${isActive('/informacion') ? 'text-[var(--dorado-elegante)] font-bold' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(false)}>VISAS</Link>
             {/* Dropdown Servicios en móvil */}
             <button
               className="w-full flex items-center justify-center gap-1 py-2 text-white focus:outline-none"
@@ -124,6 +122,8 @@ const Navbar = () => {
                 </div>
               </div>
             )}
+            <Link href="/equipo" className={`w-full text-center py-2 ${isActive('/equipo') ? 'text-[var(--dorado-elegante)] font-bold' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(false)}>Equipo</Link>
+            <Link href="/noticias" className={`w-full text-center py-2 ${isActive('/noticias') ? 'text-[var(--dorado-elegante)] font-bold' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(false)}>Noticias</Link>
           </div>
         )}
       </div>
