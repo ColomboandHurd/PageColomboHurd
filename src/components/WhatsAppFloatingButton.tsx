@@ -24,7 +24,15 @@ function getSectionName(pathname: string): string {
 
 export default function WhatsAppFloatingButton({ pathname }: Props) {
   const section = getSectionName(pathname);
-  const mensaje = encodeURIComponent(`Quiero más información de: ${section}`);
+  
+  // Mensaje personalizado para páginas específicas
+  let mensaje: string;
+  if (pathname === '/' || pathname.startsWith('/equipo') || pathname.startsWith('/noticias')) {
+    mensaje = encodeURIComponent('Hola, me gustaría recibir más información sobre los servicios de inmigración. ¿Podrían asesorarme?');
+  } else {
+    mensaje = encodeURIComponent(`Quiero más información de: ${section}`);
+  }
+  
   const url = `https://wa.me/19495947776?text=${mensaje}`;
   const isServicios = pathname.startsWith('/servicios');
   return (
