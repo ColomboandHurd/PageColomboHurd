@@ -3,26 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import FooterContacto from '@/components/FooterContacto';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGavel, faUserTie, faPassport, faUsers, faBalanceScale, faIdBadge } from '@fortawesome/free-solid-svg-icons';
-import { FaGraduationCap, FaBriefcase, FaStar } from 'react-icons/fa';
-import dynamic from 'next/dynamic';
-
-const departmentIcons = {
-  "visas-trabajo": faPassport,
-  "green-card": faIdBadge,
-  "asilo": faUsers,
-  "naturalizacion": faUserTie,
-  "derecho-familiar": faBalanceScale,
-  "litigio": faGavel
-};
-
-const specialtyIcons = [
-  <FaStar className="text-blue-400 mr-1" size={13} key="star" />,
-  <FaStar className="text-blue-400 mr-1" size={13} key="star2" />,
-  <FaStar className="text-blue-400 mr-1" size={13} key="star3" />
-];
 
 const teamMembers = [
   {
@@ -204,39 +184,6 @@ const teamMembers = [
     description: "Acompaña a clientes en procesos de obtención de ciudadanía y doble nacionalidad, con enfoque en casos complejos.",
     image: "/equipo/persona9.png",
     category: "naturalizacion"
-  }
-];
-
-const departments = [
-  {
-    id: "visas-trabajo",
-    name: "Visas de Trabajo",
-    description: "H1B, H2B, L-1, F-1, J-1, OPT, CPT"
-  },
-  {
-    id: "green-card",
-    name: "Green Card y Residencia",
-    description: "EB-1, EB-2, EB-2 NIW, EB-3, EB-5"
-  },
-  {
-    id: "asilo",
-    name: "Asilo y Protección",
-    description: "Asilo político, Visas Humanitarias, U y T"
-  },
-  {
-    id: "naturalizacion",
-    name: "Naturalización",
-    description: "Ciudadanía y Naturalización"
-  },
-  {
-    id: "derecho-familiar",
-    name: "Derecho Familiar",
-    description: "Reagrupación familiar y matrimonio"
-  },
-  {
-    id: "litigio",
-    name: "Litigio y Apelaciones",
-    description: "Cortes, apelaciones y defensa"
   }
 ];
 
