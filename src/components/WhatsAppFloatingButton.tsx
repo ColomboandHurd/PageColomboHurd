@@ -33,7 +33,9 @@ export default function WhatsAppFloatingButton({ pathname }: Props) {
     mensaje = encodeURIComponent(`Quiero más información de: ${section}`);
   }
   
-  const url = `https://wa.me/19495947776?text=${mensaje}`;
+  // WhatsApp: usa el nuevo número solo en la página de inicio
+  const numeroWhatsApp = pathname === '/' ? '15122658791' : '19495947776';
+  const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
   const isServicios = pathname.startsWith('/servicios');
   return (
     <a

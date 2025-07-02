@@ -27,7 +27,7 @@ export default function FooterContacto() {
           </div>
           <div className="flex items-center gap-2 text-lg justify-center md:justify-start">
             <PhoneIcon className="h-6 w-6 text-[var(--dorado-elegante)]" />
-            <a href="https://wa.me/19495947776" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">+1 (949) 5947776</a>
+            <a href="https://wa.me/15122658791" className="hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">+1 (512) 265-8791</a>
           </div>
           <div className="flex items-center gap-2 text-lg justify-center md:justify-start">
             <MapPinIcon className="h-6 w-6 text-[var(--dorado-elegante)]" />
@@ -45,7 +45,7 @@ export default function FooterContacto() {
               <svg width="24" height="24" fill="currentColor" className="text-[var(--dorado-elegante)]" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
               <span>Facebook</span>
             </a>
-            <a href="https://wa.me/19495947776" className="flex items-center justify-center gap-2 text-lg font-medium hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/15122658791" className="flex items-center justify-center gap-2 text-lg font-medium hover:text-[var(--dorado-elegante)] transition-colors" target="_blank" rel="noopener noreferrer">
               {/* WhatsApp */}
               <svg width="24" height="24" fill="currentColor" className="text-[var(--dorado-elegante)]" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.77 3.06 1.18 4.79 1.18h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM12.04 20.12c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.84-1.32-1.28-2.84-1.28-4.38 0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42s2.42 3.63 2.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.14c-.25-.12-1.47-.72-1.7-.82s-.39-.12-.55.12-.64.82-.79.98-.29.18-.55.06c-.25-.12-1.07-.39-2.04-1.26s-1.45-1.95-1.61-2.28c-.16-.33-.02-.51.11-.64s.25-.29.38-.44c.12-.12.16-.2.24-.33.08-.12.04-.25-.02-.37s-.55-1.32-.75-1.81c-.2-.48-.4-.42-.55-.42h-.48c-.16 0-.42.06-.64.3s-.86.84-.86 2.04c0 1.2.88 2.37 1 2.53s1.75 2.67 4.22 3.72c.59.25 1.05.4 1.41.51.6.18 1.14.15 1.56.09.48-.06 1.47-.6 1.68-1.18s.21-1.09.15-1.18c-.06-.09-.16-.15-.31-.27z"/></svg>
               <span>WhatsApp</span>
