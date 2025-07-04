@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { trackWhatsAppClick } from '@/lib/gtag';
 
 interface Props {
   pathname: string;
@@ -37,11 +38,17 @@ export default function WhatsAppFloatingButton({ pathname }: Props) {
   const numeroWhatsApp = pathname === '/' ? '15122658791' : '19495947776';
   const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
   const isServicios = pathname.startsWith('/servicios');
+  
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick(section);
+  };
+  
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleWhatsAppClick}
       className="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 text-white px-10 py-6 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-5 group"
       style={{
         boxShadow: '0 4px 12px rgba(34, 197, 94, 0.2)'

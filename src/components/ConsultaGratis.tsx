@@ -1,6 +1,12 @@
+"use client";
 import Link from 'next/link';
+import { trackButtonClick } from '@/lib/gtag';
 
 export default function ConsultaGratis() {
+  const handleButtonClick = () => {
+    trackButtonClick('evaluar_perfil');
+  };
+
   return (
     <section className="w-full flex flex-col items-center justify-center py-28 bg-white mt-32 mb-32 animate-fade-in-up">
       <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--azul-legal)] mb-8 text-center animate-fade-in-up">
@@ -9,6 +15,7 @@ export default function ConsultaGratis() {
       </h2>
       <Link href="/consulta">
         <button
+          onClick={handleButtonClick}
           className="px-16 py-7 rounded-full bg-[var(--dorado-elegante)] text-white text-3xl font-extrabold shadow-2xl hover:bg-[var(--azul-legal)] hover:text-[var(--dorado-elegante)] transition-all duration-300 uppercase tracking-wider animate-fade-in-up transform hover:scale-110 hover:shadow-yellow-400/50 border-4 border-transparent hover:border-[var(--dorado-elegante)] focus:outline-none focus:ring-4 focus:ring-[var(--dorado-elegante)]"
           style={{ marginTop: '0.5cm', animationDelay: '0.3s', letterSpacing: '0.12em' }}
         >
