@@ -30,7 +30,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) para Google Ads */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17298183701" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
           {`
@@ -38,6 +38,16 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17298183701');
+          `}
+        </Script>
+        {/* Google tag (gtag.js) para Google Analytics GA4 */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-N4Q8Y3RZZ4" strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-N4Q8Y3RZZ4');
           `}
         </Script>
       </head>
