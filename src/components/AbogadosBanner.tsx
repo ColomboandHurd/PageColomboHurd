@@ -6,7 +6,7 @@ export default function AbogadosBanner() {
     <section className="w-full flex justify-center items-center py-12 bg-transparent">
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full max-w-6xl px-4">
         {/* Imagen a la izquierda con animación de flotación */}
-        <div className="flex-shrink-0 shadow-xl rounded-3xl overflow-hidden bg-white p-2 animate-float" style={{ boxShadow: '0 8px 40px 0 rgba(30, 58, 138, 0.10)' }}>
+        <div className="flex-shrink-0 shadow-xl rounded-3xl overflow-hidden bg-white p-2" style={{ boxShadow: '0 8px 40px 0 rgba(30, 58, 138, 0.10)' }}>
           <Image
             src="/servicios.png"
             alt="IMMIGRATION SERVICES"

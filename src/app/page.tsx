@@ -11,7 +11,7 @@ export default function Home() {
       <ConsultaGratis />
       <div className="mb-20 md:mb-28" />
       <AbogadosBanner />
-      <div className="mb-20 md:mb-28" />
+      <div style={{ height: '30px' }} />
       <ImmigrationBlocks />
       <div className="mt-16 md:mt-20" />
       <FooterContacto />

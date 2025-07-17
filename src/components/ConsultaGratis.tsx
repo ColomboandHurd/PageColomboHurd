@@ -28,7 +28,7 @@ export default function ConsultaGratis() {
     }
     try {
       const { error } = await supabase
-        .from('DataBaseColomboPage')
+        .from('DatabaseColomboPage')
         .insert([
           {
             nombre,
