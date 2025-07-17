@@ -1,3 +1,4 @@
+// Comentario de prueba para commit y push
 import Navbar from '@/components/Navbar';
 import ImmigrationBlocks from '@/components/ImmigrationBlocks';
 import ConsultaGratis from '@/components/ConsultaGratis';
