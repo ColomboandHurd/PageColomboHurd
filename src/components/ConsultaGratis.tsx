@@ -1,46 +1,145 @@
 "use client";
 import Link from 'next/link';
+import { useState } from 'react';
+import { supabase } from '@/lib/supabaseClient';
 import { trackButtonClick } from '@/lib/gtag';
 
 export default function ConsultaGratis() {
+  const [nombre, setNombre] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [correo, setCorreo] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
   const handleButtonClick = () => {
     trackButtonClick('evaluar_perfil');
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+    if (!nombre || !telefono || !correo) {
+      setError("Por favor completa todos los campos.");
+      setLoading(false);
+      return;
+    }
+    try {
+      const { error } = await supabase
+        .from('DatabaseColomboPage')
+        .insert([
+          {
+            nombre,
+            telefono,
+            correo,
+            fecha_nacimiento: null,
+            nacionalidad: null,
+            fecha_ingreso: null,
+            solicito_asilo: null,
+            tiempo_tramite_asilo: null,
+            puerto_entrada: null,
+            puerto_entrada_otro: null,
+            tiene_hijos_eeuu: null,
+            cantidad_hijos: null,
+            nivel_educativo: null,
+            tiene_oferta_empleo: null,
+            tiene_titulo: null,
+            tiene_experiencia: null,
+            ha_generado_impacto: null,
+            lugar_residencia: null,
+            ocupacion: null,
+            ocupacion_otra: null,
+            ingresos: null,
+            resultado_visa: null,
+            resultados_adicionales: null
+          }
+        ]);
+      if (error) {
+        setError("Ocurrió un error al guardar tus datos. Intenta nuevamente.");
+      } else {
+        setSuccess(true);
+        setNombre("");
+        setTelefono("");
+        setCorreo("");
+      }
+    } catch {
+      setError("Ocurrió un error inesperado. Intenta nuevamente.");
+    }
+    setLoading(false);
+  };
+
   return (
-    <section className="w-full flex flex-col items-center justify-center py-28 bg-white mt-32 mb-32 animate-fade-in-up">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--azul-legal)] mb-8 text-center animate-fade-in-up">
-        <span className="text-[var(--azul-legal)] font-extrabold">En </span><span className="text-[var(--dorado-elegante)] font-extrabold">Colombo&Hurd,</span> <span className="text-[var(--azul-legal)] font-extrabold">queremos lo mejor para ti.</span><br />
-        <span className="font-normal text-2xl md:text-3xl text-[var(--azul-legal)]">Evaluando tu perfil, podemos ayudarte a definir a qué tipo de visa puedes aplicar inmediatamente<br />o qué proceso/servicio podemos ofrecerte según tu situación y necesidad.</span>
-      </h2>
-      <Link href="/consulta">
+    <section className="w-full flex flex-col items-center justify-between py-28 min-h-[820px] bg-white animate-fade-in-up px-4 mt-24">
+      {/* Texto superior pequeño */}
+      <p className="text-base md:text-lg font-medium text-[var(--azul-legal)] text-center mb-6 max-w-3xl">
+        Green Card para profesionales sin patrocinador ni inversión significativa necesaria.
+      </p>
+      {/* Título principal más grande */}
+      <h1 className="font-extrabold text-[var(--azul-legal)] text-center leading-tight mb-10 max-w-full px-2 whitespace-normal break-words">
+        <span className="block text-3xl md:text-5xl">
+          ¡TU CAMINO HACIA <span className="text-[var(--dorado-elegante)] underline">LA RESIDENCIA EN EE. UU.</span>
+        </span>
+        <span className="block text-3xl md:text-5xl mt-2">
+          COMIENZA AQUÍ! OBTÉN TU EVALUACIÓN DE PERFIL <span className="text-[var(--dorado-elegante)] underline">TOTALMENTE GRATIS</span>
+        </span>
+      </h1>
+      {/* Formulario con botón Enviar debajo del E-mail */}
+      <form className="w-full max-w-xl flex flex-col items-center gap-2 mb-2" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Nombre completo"
+          className="w-full px-6 py-4 rounded-lg border-2 border-gray-300 focus:border-[var(--dorado-elegante)] focus:outline-none text-xl"
+          value={nombre}
+          onChange={e => setNombre(e.target.value)}
+        />
+        <input
+          type="tel"
+          placeholder="Número de celular"
+          className="w-full px-6 py-4 rounded-lg border-2 border-gray-300 focus:border-[var(--dorado-elegante)] focus:outline-none text-xl"
+          value={telefono}
+          onChange={e => setTelefono(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="E-mail"
+          className="w-full px-6 py-4 rounded-lg border-2 border-gray-300 focus:border-[var(--dorado-elegante)] focus:outline-none text-xl"
+          value={correo}
+          onChange={e => setCorreo(e.target.value)}
+        />
+        {/* Botón Enviar debajo del E-mail */}
         <button
-          onClick={handleButtonClick}
-          className="px-16 py-7 rounded-full bg-[var(--dorado-elegante)] text-white text-3xl font-extrabold shadow-2xl hover:bg-[var(--azul-legal)] hover:text-[var(--dorado-elegante)] transition-all duration-300 uppercase tracking-wider animate-fade-in-up transform hover:scale-110 hover:shadow-yellow-400/50 border-4 border-transparent hover:border-[var(--dorado-elegante)] focus:outline-none focus:ring-4 focus:ring-[var(--dorado-elegante)]"
-          style={{ marginTop: '0.5cm', animationDelay: '0.3s', letterSpacing: '0.12em' }}
+          type="submit"
+          className="w-full px-10 py-5 rounded-full bg-[var(--dorado-elegante)] text-white text-2xl font-extrabold shadow-2xl hover:bg-[var(--azul-legal)] hover:text-[var(--dorado-elegante)] transition-all duration-300 uppercase tracking-wider border-4 border-transparent hover:border-[var(--dorado-elegante)] focus:outline-none focus:ring-4 focus:ring-[var(--dorado-elegante)]"
+          style={{ letterSpacing: '0.12em' }}
+          disabled={loading}
         >
-          Evaluar Perfil sin costo
+          {loading ? 'Enviando...' : 'Enviar'}
         </button>
-      </Link>
-      {/* Diagrama visual de pasos */}
-      <div className="mt-20 w-full flex justify-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-        <svg width="600" height="120" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="max-w-full">
-          {/* Línea principal */}
-          <rect x="60" y="38" width="480" height="4" rx="2" fill="#b8860b" />
-          {/* Paso 1 */}
-          <circle cx="60" cy="40" r="28" fill="#1a365d" />
-          <text x="60" y="45" textAnchor="middle" fill="#fff" fontSize="22" fontWeight="bold">1</text>
-          <text x="60" y="100" textAnchor="middle" fill="#1a365d" fontSize="16">Consulta</text>
-          {/* Paso 2 */}
-          <circle cx="300" cy="40" r="28" fill="#1a365d" />
-          <text x="300" y="45" textAnchor="middle" fill="#fff" fontSize="22" fontWeight="bold">2</text>
-          <text x="300" y="100" textAnchor="middle" fill="#1a365d" fontSize="16">Análisis</text>
-          {/* Paso 3 */}
-          <circle cx="540" cy="40" r="28" fill="#1a365d" />
-          <text x="540" y="45" textAnchor="middle" fill="#fff" fontSize="22" fontWeight="bold">3</text>
-          <text x="540" y="100" textAnchor="middle" fill="#1a365d" fontSize="16">Respuesta</text>
-        </svg>
+        {error && <p className="text-red-600 text-center mt-2">{error}</p>}
+        {success && <p className="text-green-600 text-center mt-2">¡Tus datos fueron enviados correctamente!</p>}
+        <p className="text-base md:text-lg text-[var(--azul-legal)] text-center max-w-2xl">
+          Ingresa tus detalles y recibe una evaluación gratuita de tu perfil
+        </p>
+      </form>
+      {/* Título y botón EVALUAR MI PERFIL un poco más arriba del límite inferior */}
+      <div className="w-full flex flex-col items-center pt-0 mb-0" style={{marginTop: '-32px'}}>
+        <h2 className="text-lg md:text-xl font-bold text-[var(--azul-legal)] text-center mb-8">
+          Perfil profesional evaluado por expertos en migración
+        </h2>
+        <Link href="/consulta" className="w-full max-w-xl">
+          <button
+            type="button"
+            onClick={handleButtonClick}
+            className="w-full px-10 py-5 rounded-full bg-[var(--dorado-elegante)] text-white text-2xl font-extrabold shadow-2xl hover:bg-[var(--azul-legal)] hover:text-[var(--dorado-elegante)] transition-all duration-300 uppercase tracking-wider border-4 border-transparent hover:border-[var(--dorado-elegante)] focus:outline-none focus:ring-4 focus:ring-[var(--dorado-elegante)]"
+            style={{ letterSpacing: '0.12em' }}
+          >
+            EVALUAR MI PERFIL
+          </button>
+        </Link>
       </div>
+      <div className="h-10 md:h-16" />
     </section>
   );
 } 

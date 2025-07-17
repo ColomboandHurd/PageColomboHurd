@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import FooterContacto from '@/components/FooterContacto';
 
@@ -266,7 +266,8 @@ export default function EquipoPage() {
           ))}
         </div>
       </div>
-      <div className="mt-48" />
+      {/* Política de Tratamiento de Datos - Modal interactivo */}
+      <PoliticaDatosModal />
       <FooterContacto />
       <style jsx>{`
         @keyframes fadeIn {
@@ -309,4 +310,101 @@ export default function EquipoPage() {
       `}</style>
     </main>
   );
-} 
+}
+
+{/* Política de Tratamiento de Datos - Modal interactivo */}
+function PoliticaDatosModal() {
+  const [open, setOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  // Cerrar con Esc
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [open]);
+
+  // Cerrar al hacer clic fuera
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+      setOpen(false);
+    }
+  };
+
+  return (
+    <div className="w-full flex justify-center items-center py-8">
+      <button
+        onClick={() => setOpen(true)}
+        className="text-[var(--dorado-elegante)] underline font-semibold text-lg hover:text-[var(--azul-legal)] transition-colors"
+      >
+        Política de Tratamiento de Datos Personales
+      </button>
+      {open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 animate-fade-in"
+          onClick={handleBackdropClick}
+        >
+          <div
+            ref={modalRef}
+            className="bg-[var(--azul-legal)] rounded-none shadow-2xl w-full h-full p-4 md:p-16 relative animate-scale-in flex flex-col justify-center items-center gap-4 overflow-auto"
+          >
+            {/* Botón de cerrar */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-3 right-4 text-white hover:text-red-400 text-3xl font-bold focus:outline-none"
+              aria-label="Cerrar"
+            >
+              ×
+            </button>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-center text-white mb-6">
+              Política de Tratamiento de Datos Personales
+            </h2>
+            <div className="text-lg md:text-2xl text-white leading-relaxed text-justify space-y-6 max-w-3xl mx-auto">
+              <p>
+                En Colombo & Hurd, la protección de tus datos personales es una prioridad. La información que nos proporcionas será utilizada exclusivamente para fines de contacto, asesoría y prestación de servicios legales migratorios, de acuerdo con la normativa vigente.
+              </p>
+              <p>
+                Tus datos no serán compartidos con terceros sin tu consentimiento, salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación, cancelación u oposición en cualquier momento, contactándonos a través de los medios oficiales.
+              </p>
+              <p>
+                Para más información, escríbenos a{' '}
+                <a href="mailto:info@colombo-hurdlaw.com" className="text-[var(--dorado-elegante)] underline hover:text-white">
+                  info@colombo-hurdlaw.com
+                </a>.
+              </p>
+            </div>
+            <p className="italic text-white text-base text-center mt-6 opacity-80">
+              *Este aviso cumple con la Ley de Protección de Datos Personales y garantiza la confidencialidad de tu información.*
+            </p>
+            {/* Botón cerrar debajo en móvil */}
+            <button
+              onClick={() => setOpen(false)}
+              className="mt-8 w-full md:w-auto py-3 px-8 rounded-lg bg-white text-[var(--azul-legal)] font-semibold text-xl hover:bg-[var(--dorado-elegante)] hover:text-white transition-colors"
+            >
+              Cerrar
+            </button>
+          </div>
+          <style jsx>{`
+            @keyframes scaleIn {
+              from { transform: scale(0.95); opacity: 0; }
+              to { transform: scale(1); opacity: 1; }
+            }
+            .animate-scale-in {
+              animation: scaleIn 0.18s;
+            }
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            .animate-fade-in {
+              animation: fadeIn 0.18s;
+            }
+          `}</style>
+        </div>
+      )}
+    </div>
+  );
+}

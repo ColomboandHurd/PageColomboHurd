@@ -407,3 +407,13 @@ body {
   margin: 24px auto 0 auto;
 }
 
+/* Animación de flotación sutil para imágenes destacadas */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+

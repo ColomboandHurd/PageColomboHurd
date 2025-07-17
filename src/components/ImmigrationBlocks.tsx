@@ -23,7 +23,7 @@ const blocks = [
 
 export default function ImmigrationBlocks() {
   return (
-    <section className="w-full py-16 px-4 flex justify-center bg-[var(--azul-legal)]">
+    <section className="w-full py-24 md:py-32 px-4 flex justify-center bg-[var(--azul-legal)]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
         {blocks.map((block, idx) => (
           <div
