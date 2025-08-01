@@ -7,8 +7,8 @@ import FooterContacto from '@/components/FooterContacto';
 const teamMembers = [
   {
     id: 1,
-    name: "Dra. Valeria Gómez",
-    position: "Abogada Especialista en Asilo y Refugio",
+    name: "Dra. Lorena Guadalupe Cardenas Rosales",
+    position: "Especialista en Visas de Trabajo y Residencia Permanente",
     age: "27 años",
     experience: "5 años de experiencia en derecho migratorio y humanitario",
     education: "Licenciatura en Derecho – Universidad de Los Andes\nMaestría en Derechos Humanos – Universidad Complutense de Madrid",
